@@ -22,7 +22,7 @@
   
 * **Results:**
 
-  * **Class-Conditional video synthesis
+  * **Class-Conditional video synthesis**
  
    1. **KINETICS-600**
  
