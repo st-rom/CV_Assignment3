@@ -26,7 +26,7 @@
  
    1. **KINETICS-600**
  
-     ![KINETICS_Results](assets/res_kinetics.jpg?raw=true "KINETICS Results"
+     ![KINETICS_Results](assets/res_kinetics.jpg?raw=true "KINETICS Results")
      
    2. **Video Synthesis on UCF-101**
      
@@ -41,3 +41,7 @@
    2. **BAIR Robot Pushing**
    
      ![BAIR_Results](assets/res_BAIR.jpg?raw=true "BAIR Robot Pushing Results")
+
+# Dual Video Discriminator GAN (DVD_GAN)
+## Simplified architecture
+![Architecture](assets/architecture.jpg?raw=true "DVD GAN")
