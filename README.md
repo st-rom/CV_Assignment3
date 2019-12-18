@@ -22,5 +22,6 @@
   
 * **Results:**
 
- * KINETICS-600
+  * **KINETICS-600**
+ 
  ![KINETICS_Results](assets/res_kinetics.jpg?raw=true "KINETICS Results")
