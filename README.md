@@ -25,3 +25,5 @@
   * **KINETICS-600**
  
  ![KINETICS_Results](assets/res_kinetics.jpg?raw=true "KINETICS Results")
+
+FID/IS for DVD-GAN on Kinetics-600 Video Synthesis. 
