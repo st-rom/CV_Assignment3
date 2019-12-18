@@ -29,3 +29,7 @@
      ![KINETICS_Results](assets/res_kinetics.jpg?raw=true "KINETICS Results")
 
      FID/IS for DVD-GAN on Kinetics-600 Video Synthesis. 
+     
+   2. **Video Synthesis on UCF-101**
+     
+     ![KINETICS_Results](assets/res_ucf101.jpg?raw=true "UCF-101 Results")
