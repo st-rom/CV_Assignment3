@@ -35,7 +35,7 @@
  
      ![KINETICS_Results](assets/res_kinetics.jpg?raw=true "KINETICS Results")
      
-   2. **Video Synthesis on UCF-101 produces samples with Inception Score of 32.97, which sagnificantly overperforms state-of-the-art(Table 2). When testing prediction on single-class dataset BAIR the results where better comparing to other adverserial models trained on it but slighly worse than autoregressive model Video Transformer**
+   2. **Video Synthesis on UCF-101 produces samples with Inception Score of 32.97, which sagnificantly overperforms state-of-the-art(Table 2). When testing prediction on single-class dataset BAIR the results where better comparing to other adverserial models trained on it but slighly worse than autoregressive model Video Transformer(Table 3)**
      
      ![UCF-101_Results](assets/res_ucf101.jpg?raw=true "UCF-101 Results")
 
