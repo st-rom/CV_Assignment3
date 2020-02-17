@@ -1,3 +1,8 @@
+# Technical Report for HW-3 DeblurGAN: https://docs.google.com/document/d/1UdoSX_QnpBuBn1GtHTz5J6ccB2iynCTDq9KFgzjGOrM/edit?usp=sharing
+
+
+<br><br><br>
+
 # Paper Review:  DVD-GANS
 
 * **Title**: Adversarial Video Generation on complex datasets
