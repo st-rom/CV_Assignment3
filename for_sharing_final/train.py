@@ -32,7 +32,7 @@ class Trainer(object):
 
 	def train(self):
 		self._init_params()
-		for epoch in range(0, config['num_epochs']):
+		for epoch in range(0, self.config['num_epochs']):
 			if (epoch == self.warmup_epochs) and not(self.warmup_epochs == 0):
 				self.netG.module.unfreeze()
 				self.optimizer_G = self._get_optim(self.netG.parameters())
@@ -75,6 +75,9 @@ class Trainer(object):
 			self.metric_counter.add_losses(loss_G.item(), loss_content.item(), loss_D)
 			curr_psnr, curr_ssim = self.model.get_acc(outputs, targets)
 			self.metric_counter.add_metrics(curr_psnr, curr_ssim)
+			img = self.model.get_imgs(inputs, outputs, targets)
+			if i == 0:
+				self.metric_counter.add_imgs(img)
 			tq.set_postfix(loss=self.metric_counter.loss_message())
 			i += 1
 		tq.close()
@@ -84,6 +87,7 @@ class Trainer(object):
 		self.metric_counter.clear()
 		tq = tqdm.tqdm(self.val_dataset.dataloader)
 		tq.set_description('Validation')
+		i = 0
 		for data in tq:
 			inputs, targets = self.model.get_input(data)
 			outputs = self.netG(inputs)
@@ -95,6 +99,10 @@ class Trainer(object):
 			self.metric_counter.add_losses(loss_G.item(), loss_content.item(), loss_vgg.item())
 			curr_psnr, curr_ssim = self.model.get_acc(outputs, targets)
 			self.metric_counter.add_metrics(curr_psnr, curr_ssim)
+			img = self.model.get_imgs(inputs, outputs, targets)
+			if i == 0:
+				self.metric_counter.add_imgs(img, True)
+			i += 1
 		tq.close()
 		self.metric_counter.write_to_tensorboard(epoch, validation=True)
 

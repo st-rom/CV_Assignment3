@@ -25,6 +25,13 @@ class MetricCounter():
         self.adv_loss = []
         self.psnr = []
         self.ssim = []
+        self.imgs = {'tr':[], 'val': []}
+        
+    def add_imgs(self, img, val=False):
+        if val:
+            self.imgs['val'].append(img)
+        else:
+            self.imgs['tr'].append(img)
 
     def add_losses(self, l_G, l_content, l_feature, l_D=0):
         self.G_loss.append(l_G)
@@ -52,6 +59,10 @@ class MetricCounter():
         self.writer.add_scalar('{}_G_Loss_content'.format(scalar_prefix), np.mean(self.content_loss), epoch_num)
         self.writer.add_scalar('{}_SSIM'.format(scalar_prefix), np.mean(self.ssim), epoch_num)
         self.writer.add_scalar('{}_PSNR'.format(scalar_prefix), np.mean(self.psnr), epoch_num)
+        for k in self.imgs.keys():
+            if self.imgs[k]:
+                self.writer.add_image('{}_Image'.format(k),  np.array(self.imgs[k])[:, :, :, ::-1].astype('float32') / 255, dataformats='NHWC', global_step=epoch_num)
+                self.imgs[k] = []
 
     def update_best_model(self):
         cur_metric = np.mean(self.psnr)
@@ -59,5 +70,3 @@ class MetricCounter():
             self.best_metric = cur_metric
             return True
         return False
-
-
