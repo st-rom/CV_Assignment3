@@ -37,6 +37,8 @@ class DeblurModel(nn.Module):
 
         return psnr, ssim
 
+    def get_imgs(self, inp, output, target):
+        return np.hstack((self.tensor2im(inp), self.tensor2im(output.data), self.tensor2im(target.data)))
 
 def get_model(model_config):
     return DeblurModel()
